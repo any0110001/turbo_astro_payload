@@ -8,13 +8,13 @@ import astrowind from './vendor/integration';
 
 import icon from 'astro-icon';
 
+import vercel from '@astrojs/vercel';
+
 loadEnv()
 
 export default defineConfig({
   output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  adapter: vercel(),
   integrations: [react(), astrowind({
     config: './src/config.yaml',
   }), icon(
