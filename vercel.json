@@ -9,5 +9,15 @@
       "src": "apps/payload/package.json",
       "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    {
+      "src": "/admin/(.*)",
+      "dest": "apps/payload/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "apps/web/$1"
+    }
   ]
 }
